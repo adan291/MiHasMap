@@ -118,6 +118,63 @@ public class MiHashMap
         return b;
     }
 
+    /**
+     * devuelve el número de elementos del mapa.
+     */
+    public int size()
+    {
+        int numeroDeElementos = 0;
+        for(int i =0; i < valores.length; i++)
+        {
+            numeroDeElementos++;
+        }
+        return numeroDeElementos;
+    }
+
+    /**
+     *  Metodo que vacía el mapa.
+     */
+    public void clear()
+    {
+        String key[] = new String[0];
+        int valores[] = new int[0];
+    }
+
+    /**
+     * Metodo que devuelve true si el mapa contiene la clave dada
+     */
+    public boolean containsKey(String clave)
+    {
+        boolean exist = false;
+        for(int i = 0; i<key.length; i++)
+        {
+            String var = key[i];
+            if(var == clave)
+            {
+                exist = true;
+                break;
+            }       
+        }
+        return exist;
+    }
+
+    /**
+     * Devuelve truen si el mapa contiene el valor dado
+     */
+    public boolean containsValue(int valor)
+    {
+        boolean exist = false;
+        for(int i = 0; i<valores.length; i++)
+        {
+            int var = valores[i];
+            if(var == valor)
+            {
+                exist = true;
+                break;
+            }       
+        }
+        return exist;
+    }
 
 
     
