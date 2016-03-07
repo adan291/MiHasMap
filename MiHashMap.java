@@ -92,7 +92,7 @@ public class MiHashMap
      * que la clave no exista.
      */
     public int get(String clave)
-   {
+    {
         int devolver = -1;
         for(int i=0; i<valores.length; i++)
         {
@@ -141,7 +141,6 @@ public class MiHashMap
         int valores[] = new int[0];
     }
 
-    
     /**
      * Metodo que devuelve true si el mapa contiene la clave dada
      */
@@ -160,7 +159,22 @@ public class MiHashMap
         return exist;
     }
 
-    
+    /**
+     * Devuelve truen si el mapa contiene el valor dado
+     */
+    public boolean containsValue(int valor)
+    {
+        boolean exist = false;
+        for(int i = 0; i<valores.length; i++)
+        {
+            int var = valores[i];
+            if(var == valor)
+            {
+                exist = true;
+                break;
+            }       
+        }
+        return exist;
+    }
 
-    
 }
