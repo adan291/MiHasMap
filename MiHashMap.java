@@ -88,31 +88,12 @@ public class MiHashMap
     }
 
     /**
-     * Devuelve el valor asociado con la clave especificada o -1 en caso de 
-     * que la clave no exista.
-     */
-    public int get(String clave)
-    {
-        int devolver = -1;
-        for(int i=0; i<valores.length; i++)
-        {
-            String temp = key[i]; 
-            if(temp == clave)
-            {
-                devolver = valores[i];
-            }
-        }
-
-        return devolver;
-    }
-
-    /**
      * Metodo que devuelve true si el mapa no contiene elementos.
      */
     public boolean isEmpty()
     {
         boolean b = true;
-        if(key.length >= 0 && valores.length >=0)//si
+        if(key.length >= 0 && valores.length >=0)
         {
             b = false;
         }
@@ -131,6 +112,7 @@ public class MiHashMap
         }
         return numeroDeElementos;
     }
+
 
     /**
      *  Metodo que vacía el mapa.
@@ -175,6 +157,37 @@ public class MiHashMap
             }       
         }
         return exist;
+    }
+    
+    /**
+     * Metodo que elimina del mapa el elmento con la clave dada y devuelve su valor
+     * si no existe esa clave devuelve -1
+     */
+    public int remove(String clave) 
+    {
+        int devuelve = -1;
+        int tamaño = key.length; //tamaño del hashmap
+        int index = 0;
+        while(index < tamaño)//mientras el indice sea menor que el tamaño del hashmap
+        {                   //Guardamos el valor del elemento a borrar, para devolverlo
+            String temp = key[index];
+            if(temp == clave)
+            {
+                devuelve = valores[index];
+                String tempKey[] = new String[key.length - 1];
+                int tempValores[] = new int[valores.length - 1];
+                for(int i=0; i<index;i++)
+                {
+                    tempKey[i]=key[i];
+                    tempValores[i]=valores[i];
+                }
+                key = tempKey;
+                valores = tempValores;
+                break;
+            }
+            index++;
+        }
+        return devuelve;
     }
 
 }
