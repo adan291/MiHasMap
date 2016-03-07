@@ -67,5 +67,61 @@ public class MiHashMap
         return devuelve;
     }
 
+    /**
+     * Devuelve el valor asociado con la clave especificada o -1 en caso de 
+     * que la clave no exista.
+     */
+    public int get(String clave)
+    {
+        int devolver = -1;
+        for(int i=0; i<valores.length; i++)
+        {
+            String temp = key[i]; 
+            if(temp == clave)
+            {
+                devolver = valores[i];
+            }
+        }
+
+        return devolver;
+    }
+
+    /**
+     * Devuelve el valor asociado con la clave especificada o -1 en caso de 
+     * que la clave no exista.
+     */
+    public int get(String clave)
+    {
+        int devolver = -1;
+        for(int i=0; i<valores.length; i++)
+        {
+            String temp = key[i]; 
+            if(temp == clave)
+            {
+                devolver = valores[i];
+            }
+        }
+
+        return devolver;
+    }
+
+    /**
+     * Metodo que devuelve true si el mapa no contiene elementos.
+     */
+    public boolean isEmpty()
+    {
+        boolean b = true;
+        if(key.length >= 0 && valores.length >=0)//si
+        {
+            b = false;
+        }
+        return b;
+    }
+
+
+
+    
+
+    
 
 }
