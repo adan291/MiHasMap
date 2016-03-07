@@ -18,7 +18,8 @@ public class MiHashMap
         valores = new int[0];
         key = new String [0];
     }
-/**
+
+    /**
      * Asocia el valor especificado con la clave especificada. 
      * Si la clave existía, entonces sobreescribe su valor y devuelve 
      * el valor antiguo. Si no existía devuelve -1.
@@ -91,7 +92,7 @@ public class MiHashMap
      * que la clave no exista.
      */
     public int get(String clave)
-    {
+   {
         int devolver = -1;
         for(int i=0; i<valores.length; i++)
         {
@@ -140,45 +141,6 @@ public class MiHashMap
         int valores[] = new int[0];
     }
 
-    /**
-     * Metodo que devuelve true si el mapa contiene la clave dada
-     */
-    public boolean containsKey(String clave)
-    {
-        boolean exist = false;
-        for(int i = 0; i<key.length; i++)
-        {
-            String var = key[i];
-            if(var == clave)
-            {
-                exist = true;
-                break;
-            }       
-        }
-        return exist;
-    }
-
-    /**
-     * Devuelve truen si el mapa contiene el valor dado
-     */
-    public boolean containsValue(int valor)
-    {
-        boolean exist = false;
-        for(int i = 0; i<valores.length; i++)
-        {
-            int var = valores[i];
-            if(var == valor)
-            {
-                exist = true;
-                break;
-            }       
-        }
-        return exist;
-    }
-
-
     
-
     
-
 }
